@@ -8,6 +8,5 @@ import org.bukkit.event.block.BlockBreakEvent
 class OnBlockBreakEvent: Listener {
     @EventHandler
     fun onBlockBreak(event: BlockBreakEvent) {
-        event.player.inventory.addItem(PocketWand())
     }
 }
