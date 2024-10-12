@@ -1,0 +1,14 @@
+name: PocketIn
+version: '1.0-SNAPSHOT'
+main: com.reaszki.pocketin.PocketIn
+api-version: '1.20'
+depend: [NBTAPI]
+commands:
+  wandconsume:
+    description: Your description
+    usage: /<command> <area_name>
+    permission: yourplugin.yourcommandpermission
+  arealookup:
+    description: Your description
+    usage: /<command>
+    permission: yourplugin.yourcommandpermission
