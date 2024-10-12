@@ -1,16 +1,13 @@
 # PocketIn
 A plugin about obtaining resources, crafting and selling items, leveling up and repeating.
 
-Mainly based on the beginning of Naofumi's journey (The Rising of the Shield Hero), where he gathered resources, transformed them into items and sold them.
+I've always wanted to play something similar to the beginning of Naofumi's journey (The Rising of the Shield Hero) or the anime Spice and Wolf, collecting materials, transforming them into items and selling them. The plugin is initially being developed on a prison or mines style server, but I plan to configure and adapt it later so that it works in a common survival where you will have encounters with NPCs to be able to sell your items.
 
 ---
 #### How?
-It works together with [MythicMobs](https://www.spigotmc.org/resources/%E2%9A%94-mythicmobs-free-version-%E2%96%BAthe-1-custom-mob-creator%E2%97%84.5702/) to manage custom items, features a simple crafting system via a list of items in a GUI that can take into account money, level, and items.
+Defina uma PocketArea com PocketDrops para controlar o que cada bloco dropa, defina uma PocketRecipe para criar um item e por fim venda esse item para algum NPC.
 
-It implements PocketArea System* to manage areas with resources. Within these areas, depending on the level, tool, block, world or player situation, performed action and permission, a certain amount of some custom item can be given.
-
-The selling price of the created item is calculated depending on the quality and polish of the item and the materials used.
-
+Uma wiki completa será lançada assim que o plugin estavel e fora do alpha.
 ---
 #### Roadmap
 ✅ **PocketArea**  
