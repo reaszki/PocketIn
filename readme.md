@@ -38,6 +38,7 @@ level, block, world, world state and/or player and permission.
 They will be stored in /plugins/PocketIn/drops, a graphical interface to facilitate creation and another to view the list
 of drops are planned.
 
+---
 #### Info about development:
 Why items created with MythicMobs? For the ease of creating and storing custom items, in addition to Crucible which allows creating items with skills. If it already exists, why reinvent the wheel?
 
