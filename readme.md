@@ -5,9 +5,10 @@ I've always wanted to play something similar to the beginning of Naofumi's journ
 
 ---
 #### How?
-Defina uma PocketArea com PocketDrops para controlar o que cada bloco dropa, defina uma PocketRecipe para criar um item e por fim venda esse item para algum NPC.
+Define a PocketArea with PocketDrops to control what each block drops, define a PocketRecipe to create an item, and finally sell that item to an NPC.
 
-Uma wiki completa será lançada assim que o plugin estavel e fora do alpha.
+A complete wiki will be released as soon as the plugin is stable and out of alpha.
+
 ---
 #### Roadmap
 ✅ **PocketArea**  
