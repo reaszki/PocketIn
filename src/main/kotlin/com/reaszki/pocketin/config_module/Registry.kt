@@ -1,12 +1,16 @@
 package com.reaszki.pocketin.config_module
 
 import com.reaszki.pocketin.area_module.PocketArea
+import com.reaszki.pocketin.area_module.PocketWand
 import com.reaszki.pocketin.area_module.WandConsumeCommand
 import com.reaszki.pocketin.area_module.commands.AreaLookUpCommand
+import com.reaszki.pocketin.area_module.commands.PocketCommand
 import com.reaszki.pocketin.event_module.OnBlockBreakEvent
 import com.reaszki.pocketin.event_module.OnPlayerInteractEvent
-import org.bukkit.block.data.type.Wall
-import org.bukkit.plugin.java.JavaPlugin
+import dev.jorel.commandapi.CommandAPICommand
+import dev.jorel.commandapi.arguments.GreedyStringArgument
+import dev.jorel.commandapi.executors.CommandExecutor
+import org.bukkit.entity.Player
 
 object Registry {
     fun consume() {
@@ -29,6 +33,8 @@ object Registry {
     fun commandManager() {
         Plugin.plugin.getCommand("wandconsume")?.setExecutor(WandConsumeCommand())
         Plugin.plugin.getCommand("arealookup")?.setExecutor(AreaLookUpCommand())
+//        Plugin.plugin.getCommand("pocket")?.setExecutor(SlashPocketCommand())
+        PocketCommand.pocket.register()
     }
 
     fun fillerMananger() {
