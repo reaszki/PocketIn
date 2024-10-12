@@ -94,5 +94,11 @@
             <version>2.13.2</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>dev.jorel</groupId>
+            <artifactId>commandapi-bukkit-core</artifactId>
+            <version>9.5.3</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 </project>
