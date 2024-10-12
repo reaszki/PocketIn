@@ -33,10 +33,10 @@ object NBT {
         return item
     }
 
-    fun retriveWandPos(item: ItemStack, pos: String): List<Long> {
-        lateinit var arr: List<Long>
+    fun retriveWandPos(item: ItemStack, pos: String): List<Int> {
+        lateinit var arr: List<Int>
         NBT.get(item) { nbt ->
-            arr = nbt.getCompound("pocketin")?.getLongArray(pos)!!.asList()
+            arr = nbt.getCompound("pocketin")?.getIntArray(pos)!!.asList()
         }
         return arr
     }
