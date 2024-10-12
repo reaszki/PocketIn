@@ -4,13 +4,19 @@ A plugin about obtaining resources, crafting and selling items, leveling up and 
 I've always wanted to play something similar to the beginning of Naofumi's journey (The Rising of the Shield Hero) or the anime Spice and Wolf, collecting materials, transforming them into items and selling them. The plugin is initially being developed on a prison or mines style server, but I plan to configure and adapt it later so that it works in a common survival where you will have encounters with NPCs to be able to sell your items.
 
 ---
-#### How?
+### How?
 Define a PocketArea with PocketDrops to control what each block drops, define a PocketRecipe to create an item, and finally sell that item to an NPC.
 
 A complete wiki will be released as soon as the plugin is stable and out of alpha.
 
 ---
-#### Roadmap
+### Features
+- Create and save PocketAreas (`/pocket area create name`).
+- Load PocketAreas (`/pocket area load`).
+- Wand to create PocketAreas (`/pocket area wand`).
+
+---
+### Roadmap
 ✅ **PocketArea**  
 Define and save regions. A PocketArea stores its own name, world, pair of coordinates, and a list of PocketDrops.
 
@@ -37,7 +43,7 @@ They will be stored in /plugins/PocketIn/drops, a graphical interface to facilit
 of drops are planned.
 
 ---
-#### Info about development:
+### Info about development:
 Why items created with MythicMobs? For the ease of creating and storing custom items, in addition to Crucible which allows creating items with skills. If it already exists, why reinvent the wheel?
 
 Why the area system? The plugin was designed to be used in a prison-style server scope that can be expanded with new "mines", however, a system without regions is also planned.
