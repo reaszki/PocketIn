@@ -2,8 +2,12 @@ package com.reaszki.pocketin.area_module.commands
 
 import com.reaszki.pocketin.area_module.PocketArea
 import com.reaszki.pocketin.area_module.PocketWand
+import com.reaszki.pocketin.config_module.NBT
 import dev.jorel.commandapi.CommandAPICommand
+import dev.jorel.commandapi.arguments.GreedyStringArgument
+import dev.jorel.commandapi.executors.CommandArguments
 import dev.jorel.commandapi.executors.CommandExecutor
+import org.bukkit.Material
 import org.bukkit.Sound
 import org.bukkit.entity.Player
 
@@ -15,14 +19,17 @@ object PocketCommandTree {
                     commandSender, commandArguments ->
                     if (commandSender is Player) wand(commandSender)
                 }))
+            .withSubcommand(CommandAPICommand("create")
+                .withArguments(GreedyStringArgument("name"))
+                .executes(CommandExecutor { commandSender, commandArguments ->
+                    if (commandSender is Player) create(commandSender, commandArguments)
+                }))
             .withSubcommand(CommandAPICommand("load")
-                .executes(CommandExecutor {
-                        commandSender, commandArguments ->
+                .executes(CommandExecutor { commandSender, commandArguments ->
                     if (commandSender is Player) load()
                 }))
             .withSubcommand(CommandAPICommand("lookup")
-                .executes(CommandExecutor {
-                        commandSender, commandArguments ->
+                .executes(CommandExecutor { commandSender, commandArguments ->
                     if (commandSender is Player) lookup(commandSender)
                 }))
             .executes(CommandExecutor { commandSender, commandArguments ->
@@ -56,7 +63,21 @@ object PocketCommandTree {
         sender.sendMessage("")
     }
 
-    fun create() {}
+    fun create(sender: Player, args: CommandArguments) {
+        if (sender.inventory.itemInMainHand.type == Material.AIR && !NBT.lookForCompound(sender.inventory.itemInMainHand, "pocketin")) return
+        var hasArgs = args.get("name").toString().isEmpty().not()
+        if (!hasArgs) return
+        if (sender.inventory.itemInMainHand.amount == 0) return
+        PocketArea.createArea(
+            args.get("name") as String, sender.world.name,
+            NBT.retriveWandPos(sender.inventory.itemInMainHand,"pos1"),
+            NBT.retriveWandPos(sender.inventory.itemInMainHand,"pos2")
+        )
+        sender.inventory.itemInMainHand.amount = 0
+        sender.sendMessage("§aArea created (${args[0]})!")
+
+        return
+    }
 
     private fun load() {
         PocketArea.loadAreas()

@@ -54,22 +54,3 @@ object PocketWand {
         event.isCancelled = true
     }
 }
-
-class WandConsumeCommand: CommandExecutor {
-    override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
-        if (sender !is Player) return false
-        if (!NBT.lookForCompound(sender.inventory.itemInMainHand, "pocketin")) return false
-        if (args.isEmpty()) return false
-
-        PocketArea.createArea(
-            args[0], sender.world.name,
-            NBT.retriveWandPos(sender.inventory.itemInMainHand,"pos1"),
-            NBT.retriveWandPos(sender.inventory.itemInMainHand,"pos2")
-        )
-        sender.inventory.itemInMainHand.amount = 0
-        sender.sendMessage("§aArea created (${args[0]})!")
-
-        return true
-    }
-}
-
