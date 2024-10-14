@@ -12,7 +12,8 @@ import org.bukkit.Sound
 import org.bukkit.entity.Player
 
 object PocketCommandTree {
-    var pocket = CommandAPICommand("pocket")
+
+    var pocket: CommandAPICommand = CommandAPICommand("pocket")
         .withSubcommand(CommandAPICommand("area")
             .withSubcommand(CommandAPICommand("wand")
                 .executes(CommandExecutor {
@@ -24,7 +25,7 @@ object PocketCommandTree {
                 .executes(CommandExecutor { commandSender, commandArguments ->
                     if (commandSender is Player) create(commandSender, commandArguments)
                 }))
-            .withSubcommand(CommandAPICommand("load")
+            .withSubcommand(CommandAPICommand("load")   
                 .executes(CommandExecutor { commandSender, commandArguments ->
                     if (commandSender is Player) load()
                 }))
@@ -53,7 +54,7 @@ object PocketCommandTree {
             }
 
         })
-
+    
     private fun wand(sender: Player) {
         sender.inventory.addItem(PocketWand.item())
         sender.playSound(sender.location, Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1f, 1f)
